@@ -1,11 +1,13 @@
 import glob
 import os
-import PIL
 from PIL import Image
 
+#estensione delle immagini, directory di partenza e di destinazione
+extension='.jpg'
 path='/home/pviscone/Scrivania/WhatsApp Images'
 destination='/home/pviscone/Scrivania/bianche/'
 
+#setting del range rgb e della threshold sulla percentuale
 r_under_threshold=150
 r_up_threshold=255
 g_under_threshold=150
@@ -14,7 +16,7 @@ b_under_threshold=150
 b_up_threshold=255
 percentage_threshold=0.3
 
-for filename in glob.glob(os.path.join(path,'*.jpg')):
+for filename in glob.glob(os.path.join(path,'*'+extension)):
     print(filename.split('/')[-1])
     a=0
     try:
